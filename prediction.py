@@ -6,6 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.linear_model import SGDClassifier
 from sklearn import tree
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.neighbors.nearest_centroid import NearestCentroid
 
 WORK_FILE: str = "datasets/adult.data"
 COLUMNS: List[str] = ["age", "workclass", "fnlwgt", "education", "education-num", "marital-status",
@@ -81,6 +83,26 @@ def main():
     tree_model.fit(features_train, targets_train)
     print("\n\nTree :\nTest set score: {:.2f}%".format(
         tree_model.score(features_test, targets_test) * 100))
+
+    """
+    Train and test a Gradient Tree Boosting model to predict the targets
+    """
+
+    gtb_model: GradientBoostingClassifier = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0,
+                                                                       max_depth=1, random_state=0)
+    gtb_model.fit(features_train, targets_train)
+    print("\n\nGTB :\nTest set score: {:.2f}%".format(
+        gtb_model.score(features_test, targets_test) * 100))
+
+    """
+    Train and test a Nearest Neighbor Centroid model to predict the targets
+    Works better with normalized values
+    """
+
+    nnc_model = NearestCentroid()
+    nnc_model.fit(normalized_features_train, normalized_targets_train)
+    print("\n\nNNC :\nTest set score: {:.2f}%".format(
+        nnc_model.score(normalized_features_test, targets_test) * 100))
 
 
 if __name__ == "__main__":
