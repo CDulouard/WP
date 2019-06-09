@@ -66,7 +66,7 @@ def main():
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
     plt.xlabel('Education')
-    plt.title('Number of entries per incomes depending on the education')
+    plt.title('Education ditribution per income')
     plt.legend()
     plt.show()
 
@@ -85,7 +85,7 @@ def main():
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
     plt.xlabel('Marital status')
-    plt.title('Number of entries per incomes depending of the marital status')
+    plt.title('Marital status distribution per income')
     plt.legend()
     plt.show()
 
@@ -104,7 +104,7 @@ def main():
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
     plt.xlabel('Occupation')
-    plt.title('Number of entries per incomes depending on the occupation')
+    plt.title('Occupation distribution per income')
     plt.legend()
     plt.show()
 
@@ -122,8 +122,8 @@ def main():
              histtype='barstacked', orientation='vertical', rwidth=0.8)
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
-    plt.xlabel('relationship')
-    plt.title('Number of entries per incomes depending on relationship')
+    plt.xlabel('Relationship')
+    plt.title('Relationship distribution per income')
     plt.legend()
     plt.show()
 
@@ -142,7 +142,7 @@ def main():
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
     plt.xlabel('Race')
-    plt.title('Number of entries per incomes depending on the race')
+    plt.title('Race distribution per income')
     plt.legend()
     plt.show()
 
@@ -161,7 +161,7 @@ def main():
     plt.xticks(rotation=90)
     plt.ylabel('Number of entries')
     plt.xlabel('Sex')
-    plt.title('Number of entries per incomes depending on the sex')
+    plt.title('Sex distribution per income')
     plt.legend()
     plt.show()
 

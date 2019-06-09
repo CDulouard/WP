@@ -63,7 +63,7 @@ def main():
     svm_model.fit(normalized_features_train[:20000], normalized_targets_train[:20000])
 
     print("\n\nSVM :\nTest set score: {:.2f}%".format(
-        svm_model.score(normalized_features_test[:20000], normalized_targets_test[:20000]) * 100))
+        svm_model.score(normalized_features_test, normalized_targets_test) * 100))
 
     """
     Train and test a Stochastic Gradient Descent model to predict the targets
